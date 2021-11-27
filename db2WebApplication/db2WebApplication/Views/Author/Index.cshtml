@@ -1,0 +1,47 @@
+﻿@model IEnumerable<db2WebApplication.Models.Author>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.authorname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pubyear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.book)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.authorname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pubyear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bookid)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.authorid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.authorid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.authorid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,187 @@
+﻿/*nav bar*/
+nav {
+    background: white;
+    padding: 5px 20px;
+    margin: 0px;
+}
+
+    nav ul {
+        list-style-type: none;
+    }
+
+    nav a {
+        color: #012443;
+        text-decoration: none;
+        padding: 20px 50px;
+    }
+
+        nav a:hover {
+            text-decoration: underline;
+            color: #ff5252;
+        }
+
+
+.menu li {
+    font-size: 20px;
+    /*padding: 15px 5px;*/
+    white-space: nowrap;
+}
+
+.logo a,
+.toggle a {
+    font-size: 20px;
+}
+
+.button.secondary {
+    border-bottom: 1px #ff5252 solid;
+}
+
+.logo {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Mobile menu */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle {
+    order: 1;
+}
+
+.item.button {
+    order: 2;
+}
+
+.item {
+    width: 100%;
+    text-align: center;
+    order: 3;
+    display: none;
+}
+
+    .item.active {
+        display: block;
+    }
+
+/* Navbar Toggle */
+.toggle {
+    cursor: pointer;
+}
+
+.bars {
+    background: #ff5252;
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+}
+
+    .bars:before,
+    .bars:after {
+        background: #ff5252;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+    }
+
+    .bars:before {
+        top: 5px;
+    }
+
+    .bars:after {
+        top: -5px;
+    }
+
+/* Tablet menu */
+@media all and (min-width: 468px) {
+    .menu {
+        justify-content: center;
+    }
+
+    .logo {
+        flex: 1;
+    }
+
+    .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+    }
+
+    .toggle {
+        order: 2;
+    }
+
+    .button.secondary {
+        border: 0;
+    }
+
+    .button a {
+        padding: 7.5px 15px;
+        background: #ff5252;
+        border: 1px #ff5252 solid;
+        border-radius: 50em;
+        color: white;
+    }
+
+    .button.secondary a {
+        background: transparent;
+        color: #012443;
+    }
+
+    .button a:hover {
+        text-decoration: none;
+        transition: all .25s;
+        color: #ff5252;
+    }
+
+    .button:not(.secondary) a:hover {
+        background: white;
+        border-color: #ff5252;
+    }
+
+    .button.secondary a:hover {
+        color: #ff5252;
+    }
+}
+
+/* Desktop menu */
+@media all and (min-width: 768px) {
+    .item {
+        display: block;
+        width: auto;
+    }
+
+    .toggle {
+        display: none;
+    }
+
+    .logo {
+        order: 0;
+    }
+
+    .item {
+        order: 1;
+    }
+
+    .button {
+        order: 2;
+    }
+
+    .menu li {
+        /*padding: 15px 10px;*/
+    }
+
+        .menu li.button {
+            padding-right: 0;
+        }
+}

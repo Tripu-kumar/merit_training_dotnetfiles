@@ -1,0 +1,31 @@
+﻿@model HomeDetailsViewModel;
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+</head>
+<body>
+
+    <h2>@Model.pagetitle</h2>
+    <div>
+
+        <img src="~/images/pic1.jpg" asp-append-version="True" />
+
+    </div>
+
+    <div>
+        Name: @Model.employee.Name
+    </div>
+    <div>
+        Email: @Model.employee.Email
+    </div>
+    <div>
+        Department: @Model.employee.Department
+    </div>
+    <div>
+        <a href="/home/index/">back</a>
+    </div>
+</body>
+</html>

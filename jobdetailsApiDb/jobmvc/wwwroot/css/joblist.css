@@ -1,0 +1,56 @@
+﻿.tabledesign {
+    border-collapse: collapse;
+    width: 95%;
+    border: 1px solid #ddd;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.wrap-card {
+    margin-top: 170px;
+    margin-left: 300px;
+}
+
+th {
+    text-align: left;
+    padding: 16px;
+    color: #012443;
+}
+
+td {
+    text-align: left;
+    padding: 16px;
+}
+.pencil {
+    font-size: 24px;
+    color: #012443;
+}
+.trash {
+    font-size: 24px;
+    color: #ff5252;
+}
+.info {
+    font-size: 24px;
+    color: forestgreen;
+}
+.LinkButton {
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    text-decoration: none;
+    padding: 4px;
+    border-color: #ff5252;
+    background-color: #ff5252;
+    color: white;
+    border-radius: 5px;
+}
+    .LinkButton:hover {
+        background-color: white;
+        color: #ff5252;
+    }
+.jdspace1 {
+    text-align: left;
+    width: 150px;
+}
+.jdspace {
+    text-align: right;
+    width: 100px;
+}

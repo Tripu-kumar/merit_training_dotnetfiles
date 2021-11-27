@@ -1,0 +1,27 @@
+﻿.wrap-card {
+    margin-top: 170px;
+    margin-left: 350px;
+}
+
+
+
+    .wrap-card .card {
+        margin-right: 10px;
+        color: #012443;
+        background-color: #ffffff;
+        display: inline-block;
+        padding: 10px;
+        width: 250px;
+        border-radius: 5%;
+        box-shadow: 3px 3px 3px 3px #888787;
+    }
+
+.card h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.card h1 {
+    display: flex;
+    justify-content: center;
+}

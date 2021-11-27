@@ -1,0 +1,164 @@
+﻿@model IEnumerable<jobmvc.Models.jobdata>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Admin Dashboard</title>
+
+    <link href="~/css/dashboard.css" rel="stylesheet" />
+    <link href="~/css/board.css" rel="stylesheet" />
+    <link href="~/css/joblist.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+
+
+    <!-- <link href="http://netdna.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"> -->
+
+
+
+
+</head>
+<body>
+
+    <input type="checkbox" id="check">
+    <!--header area start-->
+    <header>
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <div class="left_area">
+            <img src="~/lib/images/JDSPAT.png" class="profile_image" />
+        </div>
+        <div class="right_area">
+            <a href="logout.php" class="logout_btn">Logout</a>
+        </div>
+    </header>
+    <!--header area end-->
+    <!--mobile navigation bar start-->
+    <div class="mobile_nav">
+        <div class="nav_bar">
+            <img src="~/lib/images/JDSPAT.png" class="mobile_profile_image" />
+            <i class="fa fa-bars nav_btn"></i>
+        </div>
+        <div class="mobile_nav_items">
+            <a asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-palette"></i><span>Dashboard</span></a>
+            <a asp-area="" asp-controller="Home" asp-action="create"><i class="fas fa-plus-square"></i><span> New Job</span></a>
+            <a asp-area="" asp-controller="Home" asp-action="JobList"><i class="far fa-file-alt"></i><span>Job List</span></a>
+            <a href="categories.php"><i class="fas fa-file-upload"></i><span>View Resume</span></a>
+        </div>
+    </div>
+    <!--mobile navigation bar end-->
+    <!--sidebar start-->
+    <div class="sidebar">
+        <div class="profile_info">
+
+            <h4>Welcome</h4>
+        </div>
+        <a asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-palette"></i><span>Dashboard</span></a>
+        <a asp-area="" asp-controller="Home" asp-action="create"><i class="fas fa-plus-square"></i><span>New Job</span></a>
+        <a asp-area="" asp-controller="Home" asp-action="JobList"><i class="far fa-file-alt"></i><span>Job List</span></a>
+        <a href="categories.php"><i class="fas fa-file-upload"></i><span>View Resume</span></a>
+    </div>
+    <!--sidebar end-->
+    <div class="wrap-card">
+        <table class="tabledesign">
+            <thead>
+                <tr>
+                    @*<th>Job_Id</th>*@
+                    <th>Company Name</th>
+                    <th>Job Title</th>
+                    <th>Skills</th>
+                    <th>Experience</th>
+                    <th>No of Vacancies</th>
+                    <th>Salary</th>
+                    <th>Valid Till</th>
+                    @*<th>Email</th>*@
+                    <th>JobLocation</th>
+                    @*<th>CompanyAddress</th>*@
+                    @*<th>JobDescription</th>*@
+                    <th>JobType</th>
+                    <th>Details</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    @*<td>
+            @Html.DisplayFor(modelItem => item.JobDetailsId)
+        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Companyname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JobCategory)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Requiredskills)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Experience)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NoOfVacancies)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Salary)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EndDate)
+                    </td>
+                    @*<td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JobLocation)
+                    </td>
+                    @*<td>
+            @Html.DisplayFor(modelItem => item.PhNo)
+        </td>*@
+                    @*<td>
+            @Html.DisplayFor(modelItem => item.CompanyAddress)
+        </td>*@
+                    @*<td>
+            @Html.DisplayFor(modelItem => item.JobDescription)
+        </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobType)
+                </td>
+                    <td>
+                        @Html.ActionLink("Info", "Details", new { id = item.JobDetailsId },new { @class = "LinkButton" })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.JobDetailsId }, new { @class = "LinkButton" } )
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.JobDetailsId }, new { @class = "LinkButton" })
+                    </td>
+                   
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.nav_btn').click(function () {
+                $('.mobile_nav_items').toggleClass('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+

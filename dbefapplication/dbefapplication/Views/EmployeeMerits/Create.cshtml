@@ -1,0 +1,43 @@
+﻿@model dbefapplication.Models.EmployeeMerit
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>EmployeeMerit</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Employeename" class="control-label"></label>
+                <input asp-for="Employeename" class="form-control" />
+                <span asp-validation-for="Employeename" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeSal" class="control-label"></label>
+                <input asp-for="EmployeeSal" class="form-control" />
+                <span asp-validation-for="EmployeeSal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeDept" class="control-label"></label>
+                <input asp-for="EmployeeDept" class="form-control" />
+                <span asp-validation-for="EmployeeDept" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index"class="btn-outline-dark">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

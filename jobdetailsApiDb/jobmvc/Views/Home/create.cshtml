@@ -1,0 +1,184 @@
+﻿@model jobmvc.Models.jobdata
+
+@{
+    ViewData["Title"] = "create";
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="Dashboard.css">
+    <link rel="stylesheet" href="board1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+
+    <link href="~/css/newjob.css" rel="stylesheet" />
+    <link href="~/css/dashboard.css" rel="stylesheet" />
+    <link href="~/css/board.css" rel="stylesheet" />
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+
+
+</head>
+<body>
+
+    <input type="checkbox" id="check">
+    <!--header area start-->
+    <header>
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <div class="left_area">
+            <img src="~/lib/images/JDSPAT.png" class="profile_image" />
+
+        </div>
+        <div class="right_area">
+            <a href="logout.php" class="logout_btn">Logout</a>
+        </div>
+    </header>
+    <!--header area end-->
+    <!--mobile navigation bar start-->
+    <div class="mobile_nav">
+        <div class="nav_bar">
+            <img src="~/lib/images/JDSPAT.png" class="mobile_profile_image" />
+            <i class="fa fa-bars nav_btn"></i>
+        </div>
+        <div class="mobile_nav_items">
+            <a asp-area="" asp-controller="Home" asp-action="dashboard"><i class="fas fa-palette"></i><span>Dashboard</span></a>
+            <a asp-area="" asp-controller="Home" asp-action="newjob"><i class="fas fa-plus-square"></i><span> New Job</span></a>
+            <a asp-area="" asp-controller="Home" asp-action="joblist"><i class="far fa-file-alt"></i><span>Job List</span></a>
+            <a href="categories.php"><i class="fas fa-file-upload"></i><span>View Resume</span></a>
+        </div>
+    </div>
+    <!--mobile navigation bar end-->
+    <!--sidebar start-->
+    <div class="sidebar">
+        <div class="profile_info">
+
+            <h4>Welcome</h4>
+        </div>
+        <a asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-palette"></i><span>Dashboard</span></a>
+        <a asp-area="" asp-controller="Home" asp-action="create"><i class="fas fa-plus-square"></i><span>New Job</span></a>
+        <a asp-area="" asp-controller="Home" asp-action="JobList"><i class="far fa-file-alt"></i><span>Job List</span></a>
+        <a href="categories.php"><i class="fas fa-file-upload"></i><span>View Resume</span></a>
+    </div>
+    <!--sidebar end-->
+    <div class="job-wrap">
+        <div class="jobcontainer">
+            <div class="jobtitle">POST A JOB</div>
+            <div class="jobcontent">
+                <form asp-action="create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details">Company Name</span>
+                            <!-- <input type="text" placeholder="Enter your Company Name" required> -->
+                            <input type="text" asp-for="Companyname" class="fas" placeholder=&#xf1ad; required>
+                            <span asp-validation-for="Companyname" class="text-danger"></span>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Job Title</span>
+                            <input type="text" asp-for="JobCategory" class="fas" placeholder=&#xf0b1; required>
+                            <span asp-validation-for="JobCategory" class="text-danger"></span>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Required Skills</span>
+                            <input type="text" asp-for="Requiredskills" class="fas" placeholder=&#xf501; required>
+                            <span asp-validation-for="Requiredskills" class="text-danger"></span>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Experience</span>
+                            <input type="text" asp-for="Experience" class="fas" placeholder=&#xf406; required>
+                            <span asp-validation-for="Experience" class="text-danger"></span>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">No of Vacancies</span>
+                            <input type="number" asp-for="NoOfVacancies" class="fas" placeholder=&#xf0a1; required>
+                            <span asp-validation-for="NoOfVacancies" class="text-danger"></span>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Salary</span>
+                            <input type="text" asp-for="Salary" class="fas" placeholder=&#xf156; required>
+                            <span asp-validation-for="Salary" class="text-danger"></span>
+                        </div>
+
+                        <div class="input-box">
+                            <span class="details">Last Date To Apply</span>
+                            <input type="date" asp-for="EndDate" required>
+                            <span asp-validation-for="EndDate" class="text-danger"></span>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Email Address</span>
+                            <input type="email" asp-for="Email" class="fas" placeholder=&#xf199; required>
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Job Location</span>
+                            <input type="text" asp-for="JobLocation" class="fas" placeholder=&#xf3c5; required>
+                            <span asp-validation-for="JobLocation" class="text-danger"></span>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Contact number</span>
+                            <input type="text" asp-for="PhNo" class="fas" placeholder=&#xf2a0; required>
+                            <span asp-validation-for="PhNo" class="text-danger"></span>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Company Address</span>
+                            <textarea asp-for="CompanyAddress" style="text-align: left; padding-top: 10px; height: 100px" class="fas" placeholder=&#xf2b9; required></textarea>
+                            <span asp-validation-for="CompanyAddress" class="text-danger"></span>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Job Description</span>
+                            <textarea asp-for="JobDescription" style="text-align: left; padding-top: 10px; height: 100px" class="fas" placeholder=&#xf328; required></textarea>
+                            <span asp-validation-for="JobDescription" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="gender-details">
+                        <input type="radio" asp-for="JobType" value="Part-Time" name="jobtype" id="dot-1">
+                        <input type="radio" asp-for="JobType" value="Full-Time" name="jobtype" id="dot-2">
+                        <input type="radio" asp-for="JobType" value="Work From Home" name="jobtype" id="dot-3">
+                        <span class="gender-title">Job-Type</span>
+                        <span asp-validation-for="JobType" class="text-danger"></span>
+
+                        <div class="category">
+                            <label for="dot-1">
+                                <span class="dot one"></span>
+                                <span class="gender">Part-Time</span>
+                            </label>
+                            <label for="dot-2">
+                                <span class="dot two"></span>
+                                <span class="gender">Full-Time</span>
+                            </label>
+                            <label for="dot-3">
+                                <span class="dot three"></span>
+                                <span class="gender">Work From Home</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Add Job">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.nav_btn').click(function () {
+                $('.mobile_nav_items').toggleClass('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

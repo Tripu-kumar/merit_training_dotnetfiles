@@ -1,0 +1,12 @@
+C:\Users\merit\source\repos\WebApi2\ProductStore.data\bin\Debug\net5.0\ProductStore.data.deps.json
+C:\Users\merit\source\repos\WebApi2\ProductStore.data\bin\Debug\net5.0\ProductStore.data.dll
+C:\Users\merit\source\repos\WebApi2\ProductStore.data\bin\Debug\net5.0\ref\ProductStore.data.dll
+C:\Users\merit\source\repos\WebApi2\ProductStore.data\bin\Debug\net5.0\ProductStore.data.pdb
+C:\Users\merit\source\repos\WebApi2\ProductStore.data\obj\Debug\net5.0\ProductStore.data.csproj.AssemblyReference.cache
+C:\Users\merit\source\repos\WebApi2\ProductStore.data\obj\Debug\net5.0\ProductStore.data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\merit\source\repos\WebApi2\ProductStore.data\obj\Debug\net5.0\ProductStore.data.AssemblyInfoInputs.cache
+C:\Users\merit\source\repos\WebApi2\ProductStore.data\obj\Debug\net5.0\ProductStore.data.AssemblyInfo.cs
+C:\Users\merit\source\repos\WebApi2\ProductStore.data\obj\Debug\net5.0\ProductStore.data.csproj.CoreCompileInputs.cache
+C:\Users\merit\source\repos\WebApi2\ProductStore.data\obj\Debug\net5.0\ProductStore.data.dll
+C:\Users\merit\source\repos\WebApi2\ProductStore.data\obj\Debug\net5.0\ref\ProductStore.data.dll
+C:\Users\merit\source\repos\WebApi2\ProductStore.data\obj\Debug\net5.0\ProductStore.data.pdb

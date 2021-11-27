@@ -1,0 +1,63 @@
+﻿<html>
+<head>
+    <link href="~/css/PnrStyleSheet.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+
+
+        <a asp-controller="Home" asp-action="Index">PNR Enquiry</a>
+        <a asp-controller="Home" asp-action="Reserved">Reserved Train Between Stations</a>
+        <a asp-controller="Home" asp-action="Fareseat">Seat Availability</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="cont">
+
+
+        <div class="heading">
+            <i class="fa fa-train" style="font-size:48px; color:#012443;"></i>
+            <h1 class="head">PASSENGER RESERVATION ENQUIRY</h1>
+        </div>
+        <div class="all" style="text-align:center;height:80%">
+            <div style="overflow:auto">
+                <div class="menu">
+                    <a class="s">Services</a>
+                    <a class="s">information</a>
+                </div>
+                <div class="main">
+
+                    <h2 class="bar">RESERVED TRAIN BETWEEN STATIONS</h2>
+                    <div class="all2">
+                        <form class="f2">
+                            <div class="revf">
+                                <label class="lab">Enter Journey Date</label>
+                                <input class="textinput" type="date" placeholder="Enter journey date.">
+
+                            </div>
+                            <div class="revf">
+                                <label class="lab">Enter Source Station</label>
+                                <input class="textinput" type="text" placeholder="Enter Source Station">
+                            </div>
+                            <div class="revf">
+                                <label class="lab">Enter Destination Station</label>
+                                <input class="textinput" type="text" placeholder="Enter Destination Station ">
+                            </div>
+
+                            <div class="button">
+                                <button class="sub">GO</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer">© Copyright Train Ticket Booking 2021 Site | terms of use | Privacy  policy </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
